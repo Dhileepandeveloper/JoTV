@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JO TV</title>
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-title {
+            font-size: 24px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .video-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .video-controls button {
+            background-color: #f1f1f1;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .video-controls button:hover {
+            background-color: #ddd;
+        }
+
+        .counts {
+            margin: 0 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="video-container">
+    <iframe src="https://livepush.io/embed/emNfk3cy3ofsyPHl" allowFullScreen></iframe>
+</div>
+<div class="video-title">JO TV</div>
+<div class="video-controls">
+    <button id="like-button">Like</button>
+    <div class="counts">
+        <span id="like-count">0</span> Likes
+    </div>
+    <button id="dislike-button">Dislike</button>
+    <div class="counts">
+        <span id="dislike-count">0</span> Dislikes
+    </div>
+</div>
+
+<script>
+    let likeCount = 0;
+    let dislikeCount = 0;
+
+    document.getElementById('like-button').addEventListener('click', function() {
+        likeCount++;
+        document.getElementById('like-count').textContent = likeCount;
+    });
+
+    document.getElementById('dislike-button').addEventListener('click', function() {
+        dislikeCount++;
+        document.getElementById('dislike-count').textContent = dislikeCount;
+    });
+</script>
+
+</body>
+</html>
